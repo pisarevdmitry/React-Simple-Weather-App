@@ -7,6 +7,9 @@ import GoogleMap from '../components/google_map'
 
  class WeatherList extends Component{
      renderWeather(cityData) {
+         if(!cityData) {
+             return false
+         }
          const name = cityData.city.name;
          const temps = cityData.list.map(weather => weather.main.temp - 273);
          const pressure = cityData.list.map(weather => weather.main.pressure);
